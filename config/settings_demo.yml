@@ -1,0 +1,5 @@
+gmail:
+  address: "fake_example@gmail.com"
+  password: "fake_password"
+  source_host: "google.com" # example, please change if needed!
+  from_name: "Google"
