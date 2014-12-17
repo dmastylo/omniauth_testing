@@ -46,5 +46,5 @@ private
     accessible << [:password, :password_confirmation] unless params[:user][:password].blank?
     params.require(:user).permit(accessible)
   end
-  
+
 end
