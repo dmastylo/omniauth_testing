@@ -53,7 +53,6 @@ class User < ActiveRecord::Base
       if user.nil?
         user = User.new(
           name: auth['info']['name'],
-          #username: auth.info.nickname || auth.uid,
           email: email,
           password: Devise.friendly_token[0, 20]
         )
@@ -69,10 +68,6 @@ class User < ActiveRecord::Base
     end
 
     user
-  end
-
-  def email_verified?
-    self.email && self.email !~ TEMP_EMAIL_REGEX
   end
 
 end
