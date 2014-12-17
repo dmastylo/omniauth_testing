@@ -7,13 +7,11 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/:id.:format
   def update
-    respond_to do |format|
-      if @user.update(user_params)
-        sign_in(@user == current_user ? @user : current_user, :bypass => true)
-        redirect_to @user, notice: 'Your profile was successfully updated.'
-      else
-        render 'edit'
-      end
+    if @user.update(user_params)
+      sign_in(@user == current_user ? @user : current_user, :bypass => true)
+      redirect_to @user, notice: 'Your profile was successfully updated.'
+    else
+      render 'edit'
     end
   end
 
@@ -35,7 +33,6 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     redirect_to root_url
-
   end
 
 private
@@ -49,4 +46,5 @@ private
     accessible << [:password, :password_confirmation] unless params[:user][:password].blank?
     params.require(:user).permit(accessible)
   end
+  
 end
