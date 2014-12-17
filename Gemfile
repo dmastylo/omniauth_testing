@@ -35,6 +35,8 @@ gem 'omniauth-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin-oauth2'
 
+gem 'debase', group: :development
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
