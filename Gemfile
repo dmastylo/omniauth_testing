@@ -35,6 +35,10 @@ gem 'omniauth-oauth2'
 gem 'omniauth-facebook'
 gem 'omniauth-linkedin-oauth2'
 
+# Access Linkedin's API
+gem 'linkedin-oauth2'
+
+# Debugging
 gem 'debase', group: :development
 
 # Use ActiveModel has_secure_password

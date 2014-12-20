@@ -34,7 +34,6 @@ class User < ActiveRecord::Base
   # OAuth
   # ============================================================================
   def self.find_for_oauth(auth, signed_in_resource = nil)
-    puts auth
     # Get the identity and user if they exist
     identity = Identity.find_for_oauth(auth)
 

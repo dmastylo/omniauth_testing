@@ -1,5 +1,19 @@
 <% if user_signed_in? %>
   Logged in as <strong><%= current_user.email %></strong>.
+
+  <h1>Current Title/Headline</h1>
+  <%= @api.profile(fields: ["headline"]).headline %><br>
+
+  <h2>Job Titles</h2>
+  <% @job_titles.positions.all.each do |job| %>
+    <%= job.title %><br>
+  <% end %>
+
+  <h2>Recommendations</h2>
+  <% @api.profile(fields: ["recommendations-received"]).each do |recommendation| %>
+    <%= recommendation %><br>
+  <% end %>
+
   <%= link_to 'Edit profile', edit_user_registration_path %> |
   <%# link_to 'Authentications', authentications_path %> |
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>

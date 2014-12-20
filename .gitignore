@@ -16,6 +16,7 @@
 /tmp
 
 /config/initializers/omniauth.rb
+/config/initializers/linkedin.rb
 /config/settings.yml
 
 config/settings.local.yml
